@@ -9,8 +9,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 
-@Module
-@InstallIn(SingletonComponent::class)
+
 class SecureTokenManager(context: Context) {
 
     private val masterKey = MasterKey.Builder(context)
@@ -24,17 +23,17 @@ class SecureTokenManager(context: Context) {
         EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
         EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
     )
-@Provides
+
     fun saveToken(token: String) {
         sharedPreferences.edit {
             putString("auth_token", token)
         }
     }
-@Provides
+
     fun getToken(): String? {
         return sharedPreferences.getString("auth_token", null)
     }
-@Provides
+
     fun clearToken() {
         sharedPreferences.edit {
             remove("auth_token")

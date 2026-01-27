@@ -1,57 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".EcommerceApp"
         android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Ecommerce">
-        <activity
-            android:name=".presentation.view.SiginActivity"
-            android:exported="false"
-            android:label="@string/title_activity_sigin"
-            android:theme="@style/Theme.Ecommerce" />
-        <activity
-            android:name=".presentation.view.LoginActivity"
-            android:exported="false"
-            android:label="@string/title_activity_login"
-            android:theme="@style/Theme.Ecommerce" />
-        <activity
-            android:name=".presentation.view.AccountActivity"
-            android:exported="false"
-            android:label="@string/title_activity_account"
-            android:theme="@style/Theme.Ecommerce" />
-        <activity
-            android:name=".presentation.view.OrderActivity"
-            android:exported="false"
-            android:label="@string/title_activity_order"
-            android:theme="@style/Theme.Ecommerce" />
-        <activity
-            android:name=".presentation.view.CartActivity"
-            android:exported="false"
-            android:label="@string/title_activity_cart"
-            android:theme="@style/Theme.Ecommerce" />
-        <activity
-            android:name=".presentation.view.CatalogActivity"
-            android:exported="false"
-            android:label="@string/title_activity_catalog"
-            android:theme="@style/Theme.Ecommerce" />
-        <activity
-            android:name=".presentation.view.HomeActivity"
-            android:exported="false"
-            android:label="@string/title_activity_home"
-            android:theme="@style/Theme.Ecommerce" />
-        <activity
-            android:name=".presentation.view.NavigateActivity"
-            android:exported="false"
-            android:label="@string/title_activity_navigate"
-            android:theme="@style/Theme.Ecommerce" />
+        android:theme="@style/Theme.Ecommerce"
+        android:usesCleartextTraffic="true">
+
+
+
         <activity
             android:name=".MainActivity"
             android:exported="true"

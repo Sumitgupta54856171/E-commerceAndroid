@@ -7,7 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.remember
+
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 
@@ -19,13 +19,11 @@ import com.example.e_commerce.utils.SecureTokenManager
 import dagger.hilt.android.AndroidEntryPoint
 import androidx.compose.runtime.collectAsState
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.example.e_commerce.api.Api
+
 import com.example.e_commerce.navgraph.auhthGraph
 import com.example.e_commerce.navgraph.mainGraph
-import dagger.hilt.android.HiltAndroidApp
 
 @AndroidEntryPoint
-@HiltAndroidApp
 class MainActivity : ComponentActivity() {
     
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,7 +43,6 @@ class MainActivity : ComponentActivity() {
                     viewModel.onauth(token)
                 }
             }
-
             Scaffold(
                 bottomBar = {
                     if (isvalid.value) {
@@ -55,7 +52,7 @@ class MainActivity : ComponentActivity() {
             ) { padding ->
                 NavHost(
                     navController = navController,
-                    startDestination = if (isvalid.value) "main" else "auth",
+                    startDestination =  if(isvalid.value) "main" else "auth",
                     modifier = Modifier.padding(padding)
                 ) {
                     mainGraph(navController)

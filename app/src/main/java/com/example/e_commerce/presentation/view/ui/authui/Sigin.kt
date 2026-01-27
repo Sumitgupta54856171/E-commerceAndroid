@@ -78,7 +78,7 @@ fun Sigin(viewModel: Loginviewmodel = hiltViewModel(), navController: NavControl
                 placeholder = { Text("Enter the password") },
             )
             Spacer(modifier = Modifier.height(20.dp))
-            Button(onClick = { viewModel.onregister(viewModel.username, viewModel.email, viewModel.password) }) {
+            Button(onClick = { viewModel.onregister(viewModel.username, viewModel.email, viewModel.password,viewModel.role) }) {
                 Text(text = "Sign Up")
             }
 
@@ -86,7 +86,9 @@ fun Sigin(viewModel: Loginviewmodel = hiltViewModel(), navController: NavControl
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Text(text = "Already have an account?")
                     Button(onClick = {
-                        navController.navigate("login")
+                       navController.navigate("login")
+
+
                     }) {
                         Text(text = "Login")
                     }

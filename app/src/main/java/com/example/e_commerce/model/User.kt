@@ -3,5 +3,8 @@ package com.example.e_commerce.model
 data class User(
     val username: String,
     val email: String,
-    val password: String
+    val password: String,
+    val role : String = "user"
 )
+
+

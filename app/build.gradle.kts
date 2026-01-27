@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -51,20 +53,27 @@ dependencies {
     implementation(libs.androidx.compose.material3.adaptive.navigation.suite)
     implementation(libs.androidx.security.crypto)
     implementation(libs.androidx.navigation.compose)
+    implementation("androidx.compose.material:material-icons-extended:1.6.0") // Version check kar lena
+
+    // Hilt
+    implementation(libs.hilt.android)
+
+    implementation(libs.androidx.hilt.navigation.compose)
+    ksp(libs.hilt.compiler)
+    // Retrofit
+    implementation(libs.retrofit2.retrofit)
+    implementation(libs.converter.gson)
+// app/build.gradle.kts
+    implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
+    implementation("com.squareup.retrofit2:converter-scalars:2.9.0")
+    implementation("com.daimajia.androidanimations:library:2.4@aar")
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
-    implementation("androidx.security:security-crypto:1.1.0-alpha06")
-    implementation("androidx.security:security-crypto-ktx:1.1.0-alpha06")
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-// GSON Converter (JSON ko Kotlin banane ke liye)
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("com.google.dagger:hilt-android:2.48")
-    implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
-// Baaki Hilt dependencies jo aapne pehle se add ki hongi
-    implementation("com.google.dagger:hilt-android:2.50")
+    implementation("androidx.compose.material3:material3")
+
 }

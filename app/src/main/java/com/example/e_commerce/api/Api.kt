@@ -10,11 +10,11 @@ import retrofit2.http.POST
 interface Api {
 
     @POST("/api/users/register")
-    fun registerUser(@Body user: User): Call<User>
+     fun registerUser(@Body user: User): Call<User>
 
     @POST("/api/users/login")
-    fun loginUser(@Body user : Loginuser ) : Call<String>
+     fun loginUser(@Body user : Loginuser ) : Call<String>
 
     @POST("/api/users/auth")
-    fun auth(@Body token : String) : Call<Boolean>
+     fun auth(@Body token : String) : Call<Boolean>
 }
