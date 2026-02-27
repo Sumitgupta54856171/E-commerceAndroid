@@ -35,7 +35,7 @@ object NetworkModule {
         val client = OkHttpClient.Builder().addInterceptor(logging).build()
 
         return Retrofit.Builder()
-            .baseUrl("http://212.2.255.94:9091/")
+            .baseUrl("http://10.0.2.2:9091/")
             .client(client)
             // IMPORTTANT: Scalars ko PEHLE rakhein, Gson ko baad mein
             .addConverterFactory(ScalarsConverterFactory.create())

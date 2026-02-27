@@ -59,6 +59,7 @@ dependencies {
     implementation(libs.hilt.android)
 
     implementation(libs.androidx.hilt.navigation.compose)
+    implementation(libs.androidx.material3)
     ksp(libs.hilt.compiler)
     // Retrofit
     implementation(libs.retrofit2.retrofit)

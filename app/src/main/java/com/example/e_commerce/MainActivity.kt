@@ -40,6 +40,7 @@ class MainActivity : ComponentActivity() {
             
             LaunchedEffect(Unit) {
                 if (token.isNotEmpty()) {
+                    print(token)
                     viewModel.onauth(token)
                 }
             }

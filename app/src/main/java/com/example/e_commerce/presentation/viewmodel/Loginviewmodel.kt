@@ -11,9 +11,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.e_commerce.api.Api
 import com.example.e_commerce.model.Loginuser
 import com.example.e_commerce.model.Networkresult
-import com.example.e_commerce.model.Networkresult.Error
 import com.example.e_commerce.model.User
-import com.example.e_commerce.model.logindata
 import com.example.e_commerce.utils.SecureTokenManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -72,6 +70,8 @@ class Loginviewmodel @Inject constructor(
                 if (response.isSuccessful) {
                     Toast.makeText(getApplication(), "Registration successful", Toast.LENGTH_SHORT).show()
                     Networkresult.Success("Registration successful")
+
+
                 } else {
                     Toast.makeText(getApplication(), "Registration failed", Toast.LENGTH_SHORT).show()
                     Networkresult.Error("Registration failed")
