@@ -4,7 +4,7 @@ import android.media.Image
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-
+import androidx.compose.foundation.Image
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -17,12 +17,15 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Texture
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -165,10 +168,9 @@ fun Login(viewModel: Loginviewmodel = hiltViewModel(), navController: NavControl
                     Row(verticalAlignment = Alignment.CenterVertically) {
 
                         Spacer(modifier = Modifier.width(8.dp))
-                        Text(
-                            text = "Sign in with Google",
-                            color = Color.Black
-                        )
+                    Text(
+                        text="Google"
+                    )
                     }
                 }
                 Spacer(modifier = Modifier.height(20.dp))
